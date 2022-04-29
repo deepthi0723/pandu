@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="bb.css">
+<link rel="stylesheet" href="bb.js">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+     background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg");
+    background-size: cover;
+    height: 100vh;
+    font-size: 15px;
+    color: blue;
+    }
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color:lightblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 20px;
+  cursor: pointer;
+ font-weight: bold;
+  width: 240px;
+}
+
+}
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.avatar {
+  width: 10%;
+  border-radius: 20%;
+  background:#003300;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+    .image2 {
+        height: 80px;
+        width: 80px;
+    }
+    
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+
+</head>
+<body>
+<div class="xyz">
+    <img src="data:image/png;base64,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" class="image2">
+    <h2>ABC Coaching center</h2>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"  class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+        <button type="submit"><a href="b.html">Login</a></button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        alert("login successfully");
+    }
+}
+
+</script>
+    </div>
+</body>
+</html>
