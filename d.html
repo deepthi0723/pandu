@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            New Documnent
+        </title>
+        <meta name="courses details" content="">
+        <meta name="student data" content="">
+        <link rel="stylesheet"href="cart.css">
+    <style>
+    body
+{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR563zwATHZ8pvggtUl0sQc5OgQxFL3GoJcLg&usqp=CAU");
+    background-size: cover;
+    height: 100vh;
+}.container
+{
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    width: 200px;
+
+}
+.card
+{
+    border: 1px solid black;
+    width: max-content;
+    text-align: center;
+        padding: 100px;
+    background-color: darkblue;
+    display: inline-block;
+    margin: 5px;
+
+}
+.card img{
+    width: 500px;
+    padding: 2px;
+}
+.title
+{
+    font-weight: bold;
+    font-size: 30px;
+    color: aqua;
+    margin: 20px;
+}button{
+    border: 2px solid #e1701a;
+    background: #f7a440;
+    color: white;
+    font-weight: bold;
+    margin: 20px;
+    padding: 5px 10px;
+}
+button:hover{
+    box-shadow: 0 0 5px #e1701a inset;
+}
+        
+        .btn{
+            height: 60px;
+            font-size: 20px;
+            border-radius: 15px;
+            width: 170px;
+        }
+        
+        .image{
+            height: 200px;
+            width: 800px;
+        }
+.cart{
+    width: 250px;
+    float: right;
+    text-align: center;
+    border: 1px solid black;
+    overflow-y: scroll;
+    height: 100%;
+}
+.cartImg
+{
+    width: 200px;
+}    
+    </style>
+    </head>
+    <body>
+        <div class="containter">
+            <div class="card d-flex flex-column justify-content-center" id="items1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrW0b5fRP3YQVgfP0OA7SDztw0Gfe_aPLfVQ&usqp=CAU" class="image">
+                 <div class="title">COURSE DETAILS</div>
+                <div>
+                    
+                    <select>
+                        <option>Java</option>
+                        <option>Python</option>
+                        <option>Javascript</option>
+                        <option>HTML</option>
+                        <option>GitHub</option>
+                        <option>Microsoft Azure</option>
+                    </select>
+                </div>
+                <button class="btn" onclick="addTocart(items1)"><a href="e.html">Add to Cart</a></button>
+
+        </div>
+        <div class="cart" id="cart">
+            
+            <div id="title"></div>
+        </div>
+    </body>
+    <script>
+        var addItemId =0;
+        function addTocart(item)
+        {
+            addItemId+=1;
+            var selectedItem=document.createElement('div');
+            selectedItem.classList.add('cartimg');
+            selectedItem.setAttribute('id',addItemId);
+            var img=document.createElement('img');
+            img.setAttribute('src',item.children[0].currentsrc);
+            var title=document.createElement('div');
+            title.innerText=item.children[1].innerText;
+            var label=document.createElement('div');
+            label.innerText=item.createElement[2].children[0].innerText;
+            var select=document.createElement('span');
+            select.innerText=item.children[2].children[1].value;
+            label.append(select);
+            var delBtn=document.createElement('button');
+            delBtn.innerText='Delete';
+            delBtn.setAttribute('onclick','del('+addItemId')');
+            var cartItems=document.getElementById('title');
+            selectedItem.append(img);
+            selectedItem.append(title);
+            selectedItem.append(label);
+            selectedItem.append(delBtn);
+            cartItems.append(selectedItem);
+                
+        }
+        function del(item){
+            document.getElementById(item).remove();
+        }
+    </script>
+</html>
